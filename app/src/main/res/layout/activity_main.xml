@@ -61,7 +61,7 @@
 
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/pr"
+        android:id="@+id/btn_Pilgan"
         android:layout_width="114dp"
         android:layout_height="129dp"
         android:backgroundTint="@color/primary"
@@ -84,9 +84,10 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="385dp"
         android:layout_height="169dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="52dp"
         android:src="@drawable/upgrade_banner"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.384"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pr" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_Pilgan" />
 </androidx.constraintlayout.widget.ConstraintLayout>
