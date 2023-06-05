@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Menambahkan event listener untuk MaterialButton
         binding.pr.setOnClickListener {
             val intent = Intent(this, PilganActivity::class.java)
             startActivity(intent)
