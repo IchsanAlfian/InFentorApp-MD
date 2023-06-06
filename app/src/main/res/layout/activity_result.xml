@@ -6,4 +6,97 @@
     android:layout_height="match_parent"
     tools:context=".ui.ResultActivity">
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/profile_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.084" />
+
+    <TextView
+        android:id="@+id/tv_header"
+        android:layout_width="377dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="36dp"
+        android:text="Mantap Deddy Kamu Memiliki Kecerdsaan Pada Bidang Kinestik"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/profile_image"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/profile_image"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/shapeableImageView"
+        android:layout_width="322dp"
+        android:layout_height="270dp"
+        android:background="@color/primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_header">
+
+    </com.google.android.material.imageview.ShapeableImageView>
+
+    <TextView
+        android:id="@+id/tv_job"
+        android:layout_width="323dp"
+        android:layout_height="58dp"
+        android:text="Bidang Pekerjaan Yang paling Cocok Untuk Kamu Yaitu Pengacara"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/shapeableImageView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/shapeableImageView"
+        app:layout_constraintTop_toBottomOf="@+id/tv_header" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_tokoh"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/hotman_paris"
+        app:layout_constraintEnd_toEndOf="@+id/shapeableImageView"
+        app:layout_constraintStart_toStartOf="@+id/shapeableImageView"
+        app:layout_constraintTop_toBottomOf="@+id/tv_job"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tv_namaTokoh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hotman Paris"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView"
+        app:layout_constraintEnd_toEndOf="@+id/iv_tokoh"
+        app:layout_constraintStart_toStartOf="@+id/iv_tokoh"
+        app:layout_constraintTop_toBottomOf="@+id/iv_tokoh" />
+
+    <Button
+        android:id="@+id/btn_home"
+        android:layout_width="322dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/secondary"
+        android:text="Halaman Utama"
+        android:textAllCaps="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shapeableImageView"
+        app:layout_constraintVertical_bias="0.178" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

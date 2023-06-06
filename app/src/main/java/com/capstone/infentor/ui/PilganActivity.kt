@@ -13,6 +13,7 @@ import com.capstone.infentor.databinding.ActivityPilganBinding
 
 import com.capstone.infentor.dummy.Question
 import com.capstone.infentor.dummy.QuestionData
+import com.capstone.infentor.ui.ResultActivity.Companion.EXTRA_RESULT
 
 class PilganActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPilganBinding
@@ -48,8 +49,6 @@ class PilganActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Kuis selesai", Toast.LENGTH_SHORT).show()
                 showUserAnswers()
-                val intent = Intent(this, EssayActivity::class.java)
-                startActivity(intent)
 
             }
         }
@@ -115,7 +114,7 @@ class PilganActivity : AppCompatActivity() {
             val question = QuestionData.questions[i]
             val answer = userAnswers[i]
             val intelligenceType = question.tipe
-            answers.append("$answer}")
+            answers.append("$answer,")
             //kurang case kalau kondisi sama
             if (intelligenceTypeScores.containsKey(intelligenceType)) {
                 val currentScore = intelligenceTypeScores[intelligenceType]!!
@@ -136,5 +135,11 @@ class PilganActivity : AppCompatActivity() {
         }
         Toast.makeText(this, answers.toString(), Toast.LENGTH_LONG).show()
         Toast.makeText(this, "Tipe Kecerdasan Dominan: $dominantIntelligenceType", Toast.LENGTH_LONG).show()
+
+        // Menambahkan data dominanIntelligenceType ke Intent
+        val intent = Intent(this, EssayActivity::class.java)
+        intent.putExtra(EXTRA_RESULT, dominantIntelligenceType)
+        startActivity(intent)
+
     }
 }
