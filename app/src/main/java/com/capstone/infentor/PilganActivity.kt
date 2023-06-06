@@ -4,11 +4,11 @@ import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
 import android.widget.Toast
 import com.capstone.infentor.databinding.ActivityPilganBinding
+
 import com.capstone.infentor.dummy.Question
 import com.capstone.infentor.dummy.QuestionData
 
@@ -99,12 +99,31 @@ class PilganActivity : AppCompatActivity() {
         view.startAnimation(scaleAnimation)
     }
     private fun showUserAnswers() {
+        val intelligenceTypeScores = mutableMapOf<String, Int>()
         val answers = StringBuilder()
         for (i in 0 until userAnswers.size) {
             val question = QuestionData.questions[i]
             val answer = userAnswers[i]
+            val intelligenceType = question.tipe
             answers.append("$answer}")
+            if (intelligenceTypeScores.containsKey(intelligenceType)) {
+                val currentScore = intelligenceTypeScores[intelligenceType]!!
+                intelligenceTypeScores[intelligenceType] = currentScore + answer
+            } else {
+                intelligenceTypeScores[intelligenceType] = answer
+            }
+        }
+        var maxScore = 0
+        var dominantIntelligenceType = ""
+
+        // Mencari tipe kecerdasan dengan skor tertinggi
+        for ((intelligenceType, score) in intelligenceTypeScores) {
+            if (score > maxScore) {
+                maxScore = score
+                dominantIntelligenceType = intelligenceType
+            }
         }
         Toast.makeText(this, answers.toString(), Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "Tipe Kecerdasan Dominan: $dominantIntelligenceType", Toast.LENGTH_LONG).show()
     }
 }

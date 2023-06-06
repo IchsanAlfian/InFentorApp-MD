@@ -161,15 +161,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rating3" />
 
-        <Button
-            android:id="@+id/btnSelesai"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Selesai"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_prev" />
-
         <TextView
             android:id="@+id/tv_indeks"
             android:layout_width="73dp"

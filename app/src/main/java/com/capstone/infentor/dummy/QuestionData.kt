@@ -24,5 +24,10 @@ object QuestionData {
             "Dalam kerja kelompok saya lebih memilih memindahkan barang atau membuat suatu bentuk",
             "Kinestik"
         ),
+        Question(
+            5,
+            "Saya memahami kelebihan dan kekurangan diri saya.",
+            "Mathematic"
+        ),
     )
 }
