@@ -12,13 +12,19 @@
         android:theme="@style/Theme.InFentor"
         tools:targetApi="31">
         <activity
-            android:name=".CobaActivity"
+            android:name=".ResultActivity"
             android:exported="false" />
         <activity
-            android:name=".PilganActivity"
+            android:name=".ui.EssayActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.CobaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.PilganActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

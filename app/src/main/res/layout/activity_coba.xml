@@ -1,37 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CobaActivity">
-    <ImageView
-        android:id="@+id/rating1"
-        android:layout_width="wrap_content"
+    android:padding="16dp"
+    tools:context=".ui.CobaActivity">
+    <TextView
+        android:id="@+id/tvQuestion"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/circle_empty" />
+        android:text="Tuliskan kesenangan kamu saat di rumah:"
+        android:textStyle="bold"
+        android:textSize="18sp" />
 
-    <ImageView
-        android:id="@+id/rating2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/circle_empty" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tvQuestion"
+        android:layout_marginTop="8dp"
+        android:layout_above="@id/btnSubmit">
 
-    <ImageView
-        android:id="@+id/rating3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/circle_empty" />
+        <EditText
+            android:id="@+id/etAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Tulis jawaban kamu di sini..."
+            android:background="@drawable/edittext_border"
+            android:inputType="textMultiLine"
+            android:gravity="top"
+            android:padding="16dp"
+            android:textColor="#000000"
+            android:textSize="16sp" />
 
-    <ImageView
-        android:id="@+id/rating4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/circle_empty" />
+    </ScrollView>
 
-    <ImageView
-        android:id="@+id/rating5"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/btnSubmit"
+        android:backgroundTint="@color/secondary"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/circle_empty" />
-</LinearLayout>
+        android:layout_alignParentBottom="true"
+        android:text="Submit"
+        android:textAllCaps="true" />
+</RelativeLayout>

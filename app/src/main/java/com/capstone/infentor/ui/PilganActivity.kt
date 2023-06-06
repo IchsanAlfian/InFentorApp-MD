@@ -1,12 +1,14 @@
-package com.capstone.infentor
+package com.capstone.infentor.ui
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
 import android.widget.Toast
+import com.capstone.infentor.R
 import com.capstone.infentor.databinding.ActivityPilganBinding
 
 import com.capstone.infentor.dummy.Question
@@ -46,6 +48,9 @@ class PilganActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Kuis selesai", Toast.LENGTH_SHORT).show()
                 showUserAnswers()
+                val intent = Intent(this, EssayActivity::class.java)
+                startActivity(intent)
+
             }
         }
         binding.btnPrev.setOnClickListener {
@@ -66,6 +71,11 @@ class PilganActivity : AppCompatActivity() {
         binding.tvIndeks.text = "${currentQuestionIndex + 1} of ${QuestionData.questions.size}"
         val userAnswer = userAnswers[currentQuestionIndex]
         setRating(userAnswer)
+        if (currentQuestionIndex == QuestionData.questions.size - 1) {
+            binding.btnNext.text = "Lanjut Essay"
+        } else {
+            binding.btnNext.text = "Next"
+        }
     }
 
     private fun setRating(rating: Int) {
@@ -106,6 +116,7 @@ class PilganActivity : AppCompatActivity() {
             val answer = userAnswers[i]
             val intelligenceType = question.tipe
             answers.append("$answer}")
+            //kurang case kalau kondisi sama
             if (intelligenceTypeScores.containsKey(intelligenceType)) {
                 val currentScore = intelligenceTypeScores[intelligenceType]!!
                 intelligenceTypeScores[intelligenceType] = currentScore + answer
