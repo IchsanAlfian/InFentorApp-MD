@@ -12,6 +12,9 @@
         android:theme="@style/Theme.InFentor"
         tools:targetApi="31">
         <activity
+            android:name=".CobaActivity"
+            android:exported="false" />
+        <activity
             android:name=".PilganActivity"
             android:exported="false" />
         <activity

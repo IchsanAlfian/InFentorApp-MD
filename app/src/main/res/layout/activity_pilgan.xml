@@ -35,9 +35,9 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/shapeableImageView"
-            android:layout_width="324dp"
-            android:layout_height="230dp"
-            android:layout_marginTop="84dp"
+            android:layout_width="322dp"
+            android:layout_height="242dp"
+            android:layout_marginTop="88dp"
             android:background="@color/primary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
@@ -46,58 +46,78 @@
 
         </com.google.android.material.imageview.ShapeableImageView>
 
-        <Button
-            android:id="@+id/btn_option1"
-            android:layout_width="324dp"
-            android:layout_height="53dp"
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circle_white"
+            android:layout_width="126dp"
+            android:layout_height="117dp"
+            android:src="@color/white"
+            app:civ_border_color="@color/primary"
+            app:civ_border_width="4dp"
+            app:layout_constraintEnd_toEndOf="@+id/shapeableImageView"
+            app:layout_constraintStart_toStartOf="@+id/shapeableImageView"
+            app:layout_constraintTop_toBottomOf="@+id/tv_soal" />
+
+        <ImageView
+            android:id="@+id/emote"
+            android:layout_width="81dp"
+            android:layout_height="74dp"
+            android:src="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/circle_white"
+            app:layout_constraintEnd_toEndOf="@+id/circle_white"
+            app:layout_constraintStart_toStartOf="@+id/circle_white"
+            app:layout_constraintTop_toTopOf="@+id/circle_white" />
+
+        <ImageView
+            android:id="@+id/rating1"
+            android:layout_width="49dp"
+            android:layout_height="59dp"
             android:layout_marginTop="52dp"
-            android:backgroundTint="@color/primary"
-            android:text="Kucing"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/shapeableImageView" />
+            android:src="@drawable/circle_empty"
+            app:layout_constraintEnd_toStartOf="@+id/rating2"
+            app:layout_constraintTop_toBottomOf="@+id/circle_white" />
+        <ImageView
+            android:id="@+id/rating2"
+            android:layout_width="49dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="52dp"
+            android:src="@drawable/circle_empty"
+            app:layout_constraintEnd_toStartOf="@+id/rating3"
+            app:layout_constraintTop_toBottomOf="@+id/circle_white" />
 
-        <Button
-            android:id="@+id/btn_option2"
-            android:layout_width="324dp"
-            android:layout_height="53dp"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="@color/primary"
-            android:text="Gitar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_option1" />
 
-        <Button
-            android:id="@+id/btn_option4"
-            android:layout_width="324dp"
-            android:layout_height="53dp"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="@color/primary"
-            android:text="Ayunan"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_option3" />
+        <ImageView
+            android:id="@+id/rating3"
+            android:layout_width="49dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="52dp"
+            android:src="@drawable/circle_empty"
+            app:layout_constraintEnd_toEndOf="@+id/circle_white"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="@+id/circle_white"
+            app:layout_constraintTop_toBottomOf="@+id/circle_white" />
 
-        <Button
-            android:id="@+id/btn_option3"
-            android:layout_width="324dp"
-            android:layout_height="53dp"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="@color/primary"
-            android:text="Bola"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_option2" />
+        <ImageView
+            android:id="@+id/rating4"
+            android:layout_width="49dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="52dp"
+            android:src="@drawable/circle_empty"
+            app:layout_constraintStart_toEndOf="@+id/rating3"
+            app:layout_constraintTop_toBottomOf="@+id/circle_white" />
+
+        <ImageView
+            android:id="@+id/rating5"
+            android:layout_width="49dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="52dp"
+            android:src="@drawable/circle_empty"
+            app:layout_constraintStart_toEndOf="@+id/rating4"
+            app:layout_constraintTop_toBottomOf="@+id/circle_white" />
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="148dp"
-            android:layout_height="121dp"
+            android:layout_width="133dp"
+            android:layout_height="113dp"
             app:layout_constraintEnd_toEndOf="@+id/shapeableImageView"
             app:layout_constraintStart_toStartOf="@+id/shapeableImageView"
             app:layout_constraintTop_toTopOf="@+id/shapeableImageView"
@@ -105,9 +125,10 @@
 
         <TextView
             android:id="@+id/tv_soal"
-            android:layout_width="280dp"
-            android:layout_height="80dp"
+            android:layout_width="278dp"
+            android:layout_height="93dp"
             android:text="Silahkan pilih satu yang kamu suka"
+            android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -119,26 +140,26 @@
             android:id="@+id/btn_next"
             android:layout_width="160dp"
             android:layout_height="55dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="36dp"
+            android:layout_marginTop="92dp"
+            android:layout_marginEnd="32dp"
             android:backgroundTint="@color/secondary"
             android:text="Selanjutnya"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_option4" />
+            app:layout_constraintTop_toBottomOf="@+id/rating3" />
 
         <Button
             android:id="@+id/btn_prev"
             android:layout_width="160dp"
             android:layout_height="55dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="92dp"
             android:backgroundTint="@color/secondary"
             android:text="Sebelumnya"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/btn_next"
-            app:layout_constraintHorizontal_bias="0.545"
+            app:layout_constraintHorizontal_bias="0.745"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_option4" />
+            app:layout_constraintTop_toBottomOf="@+id/rating3" />
 
         <Button
             android:id="@+id/btnSelesai"

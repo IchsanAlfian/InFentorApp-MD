@@ -4,27 +4,25 @@ object QuestionData {
     val questions = listOf(
         Question(
             1,
-            "Manakah benda yang kamu sukai?",
-            "Bola",
-            "Tongkat",
-            "Pensil",
-            "Kursi"
+            "Saya senang bercerita, termasuk cerita dongeng dan cerita yang lucu",
+            "Logis",
+
         ),
         Question(
             2,
-            "Hobby yang kamu sukai?",
-            "Renang",
-            "Sepak Bola",
-            "Membaca Buku",
-            "Medengarkan Musik"
+            "Saya sangat menikmati pelajaran matematika",
+            "Logis",
+
         ),
         Question(
             3,
-            "Menurut Kamu apa yang lebih bagus dari bunga",
-            "Matahari",
-            "Pelangi",
-            "Lautan",
-            "Gunung"
+            "Saya menikmati hobi saya dalam bidang fotografi",
+            "Kinestik"
+        ),
+        Question(
+            4,
+            "Dalam kerja kelompok saya lebih memilih memindahkan barang atau membuat suatu bentuk",
+            "Kinestik"
         ),
     )
 }
