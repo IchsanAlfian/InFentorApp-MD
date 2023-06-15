@@ -73,7 +73,7 @@ class PilganActivity : AppCompatActivity() {
         if (currentQuestionIndex == QuestionData.questions.size - 1) {
             binding.btnNext.text = "Lanjut Essay"
         } else {
-            binding.btnNext.text = "Next"
+            binding.btnNext.text = "Selanjutnya"
         }
     }
 
