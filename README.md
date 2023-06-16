@@ -1,6 +1,6 @@
 # MD-InFentorApp
 <p align="center">
-  <img src="gambar/logo.jpeg" alt="Infentor logo" width="500" />
+  <img src="gambar/mylogo.png" alt="Infentor logo" width="500" />
 </p>
 
 # InFentorApps
