@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
         binding.btnPilgan.setOnClickListener {
-            val intent = Intent(this, GlosariumActivity::class.java)
+            val intent = Intent(this, PilganActivity::class.java)
             startActivity(intent)
         }
     }
