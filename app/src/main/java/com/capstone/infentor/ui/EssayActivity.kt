@@ -1,18 +1,19 @@
 package com.capstone.infentor.ui
 
 import MlViewModel
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.os.Looper
 import android.view.View
 import android.widget.EditText
-import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.capstone.infentor.R
 import com.capstone.infentor.databinding.ActivityEssayBinding
-import com.capstone.infentor.databinding.ActivityMainBinding
+
 
 class EssayActivity : AppCompatActivity() {
 
@@ -22,6 +23,7 @@ class EssayActivity : AppCompatActivity() {
     private lateinit var mlViewModel: MlViewModel
     private var careerRecommendation: String = ""
 
+    private var backPressedOnce = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,35 +39,55 @@ class EssayActivity : AppCompatActivity() {
             mlViewModel.isLoading.observe(this) {
                 showLoading(it)
             }
-
-
         }
-            observeCareerRecommendation()
+        observeCareerRecommendation()
+
+        // Handle back button press
+        val onBackPressedCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (backPressedOnce) {
+                    navigateToMainActivity()
+                } else {
+                    backPressedOnce = true
+                    Toast.makeText(this@EssayActivity, "Tekan sekali lagi untuk keluar dari kuis", Toast.LENGTH_SHORT).show()
+                    resetBackPressedFlag()
+                }
+            }
+        }
+        onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
     }
+
     private fun postAnswer() {
         val answer = etAnswer.text.toString()
         mlViewModel.requestCareerRecommendation(answer)
     }
 
-
     private fun observeCareerRecommendation() {
         mlViewModel.careerRecommendation.observe(this, { recommendation ->
             careerRecommendation = recommendation
-            val result = "$recommendation"
+
             val intent = Intent(this, ResultActivity::class.java)
             intent.putExtra(ResultActivity.EXTRA_RESULT, dominantIntelligenceType)
             intent.putExtra(ResultActivity.EXTRA_CAREER_RECOMMENDATION, careerRecommendation)
             startActivity(intent)
-
-//            // Lakukan sesuatu dengan hasil yang diterima
-//            binding.tvResult.text = result
         })
     }
+
     private fun showLoading(isLoading: Boolean) {
         if (isLoading) {
-            binding.addStoryProgressBar.visibility = View.VISIBLE
+            binding.essayProgressBar.visibility = View.VISIBLE
         } else {
-            binding.addStoryProgressBar.visibility = View.GONE
+            binding.essayProgressBar.visibility = View.GONE
         }
+    }
+
+    private fun navigateToMainActivity() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    private fun resetBackPressedFlag() {
+        Handler().postDelayed({ backPressedOnce = false }, 2000)
     }
 }

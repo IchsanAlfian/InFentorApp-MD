@@ -15,6 +15,8 @@ import retrofit2.Response
 class GlosariumViewModel : ViewModel() {
     private val _glosarium = MutableLiveData<List<JobsItem>>()
     val glosarium: LiveData<List<JobsItem>> get() = _glosarium
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading: LiveData<Boolean> = _isLoading
 
     init {
         // Call the getGlosarium function when the ViewModel is initialized
@@ -22,6 +24,7 @@ class GlosariumViewModel : ViewModel() {
     }
 
     fun getGlosarium() {
+        _isLoading.value = true
         val apiService = ApiConfig.getApiService()
         val call = apiService.getGlosarium()
 
@@ -30,11 +33,13 @@ class GlosariumViewModel : ViewModel() {
                 call: Call<GlosariumResponse>,
                 response: Response<GlosariumResponse>
             ) {
+                _isLoading.value = false
                 if (response.isSuccessful) {
                     val glosariumResponse = response.body()
                     val glosariumList = glosariumResponse?.jobs
                     _glosarium.value = glosariumList!!
                 } else {
+                    _isLoading.value = false
                     Log.e("GlosariumViewModel", "onFailure: ${response.message()}")
                 }
             }

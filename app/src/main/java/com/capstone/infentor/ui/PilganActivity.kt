@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
@@ -19,6 +21,7 @@ class PilganActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPilganBinding
     private var currentQuestionIndex = 0
     private val userAnswers = mutableListOf<Int>()
+    private var backPressedOnce = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPilganBinding.inflate(layoutInflater)
@@ -97,11 +100,6 @@ class PilganActivity : AppCompatActivity() {
             else -> R.color.white
         }
     }
-//    private fun fadeAnimation(view: View) {
-//        val fadeInAnimation = AlphaAnimation(0f, 1f)
-//        fadeInAnimation.duration = 1000
-//        view.startAnimation(fadeInAnimation)
-//    }
     private fun scaleAnimation(view: View) {
         val scaleAnimation = ScaleAnimation(0f, 1f, 0f, 1f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
         scaleAnimation.duration = 300
@@ -133,13 +131,37 @@ class PilganActivity : AppCompatActivity() {
                 dominantIntelligenceType = intelligenceType
             }
         }
-        Toast.makeText(this, answers.toString(), Toast.LENGTH_LONG).show()
-        Toast.makeText(this, "Tipe Kecerdasan Dominan: $dominantIntelligenceType", Toast.LENGTH_LONG).show()
 
         // Menambahkan data dominanIntelligenceType ke Intent
         val intent = Intent(this, EssayActivity::class.java)
         intent.putExtra(EXTRA_RESULT, dominantIntelligenceType)
         startActivity(intent)
-
     }
+    private fun navigateToMainActivity() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+    private fun resetBackPressedFlag() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            backPressedOnce = false
+        }, 2000)
+    }
+    override fun onBackPressed() {
+        if (currentQuestionIndex > 0) {
+            currentQuestionIndex--
+            updateQuestion()
+        } else {
+            if (backPressedOnce) {
+                navigateToMainActivity()
+            } else {
+                backPressedOnce = true
+                // Tampilkan pesan jika ingin keluar dari halaman
+                Toast.makeText(this, "Tekan kembali sekali lagi untuk kembali ke halaman utama", Toast.LENGTH_SHORT).show()
+                resetBackPressedFlag()
+            }
+        }
+    }
+
+
 }

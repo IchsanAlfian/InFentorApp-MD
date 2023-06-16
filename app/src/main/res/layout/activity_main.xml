@@ -21,8 +21,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
-        android:text="Halo....."
-        android:textColor="@color/black"
+        android:text="Hallo....."
+        android:textColor="@color/white"
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/tv_username"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:text="DEDDY CAHYADI"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -82,12 +82,96 @@
         app:strokeWidth="5dp" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="385dp"
-        android:layout_height="169dp"
-        android:layout_marginTop="52dp"
+        android:id="@+id/appCompatImageView"
+        android:layout_width="376dp"
+        android:layout_height="162dp"
+        android:layout_marginTop="16dp"
         android:src="@drawable/upgrade_banner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.384"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_Pilgan" />
+
+    <View
+        android:id="@+id/squareShape"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="44dp"
+        android:background="@color/primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView" />
+
+    <View
+        android:id="@+id/btn_lock1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="44dp"
+        android:background="@color/primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toEndOf="@+id/squareShape"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView" />
+
+    <View
+        android:id="@+id/btn_lock2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="44dp"
+        android:background="@color/primary"
+        app:layout_constraintEnd_toStartOf="@+id/squareShape"
+        app:layout_constraintHorizontal_bias="0.326"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView" />
+
+    <ImageView
+        android:id="@+id/iv_glosarium"
+        android:layout_width="65dp"
+        android:layout_height="71dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_lock2"
+        app:layout_constraintEnd_toEndOf="@+id/btn_lock2"
+        app:layout_constraintStart_toStartOf="@+id/btn_lock2"
+        app:layout_constraintTop_toTopOf="@+id/btn_lock2"
+        app:srcCompat="@drawable/icon_glosarium" />
+
+    <ProgressBar
+        android:id="@+id/mainProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="74dp"
+        android:layout_height="66dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.519"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.601"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="81dp"
+        android:layout_height="74dp"
+        app:layout_constraintBottom_toBottomOf="@+id/squareShape"
+        app:layout_constraintEnd_toEndOf="@+id/squareShape"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/squareShape"
+        app:layout_constraintTop_toTopOf="@+id/squareShape"
+        app:layout_constraintVertical_bias="0.444"
+        app:srcCompat="@drawable/icon_locked" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="81dp"
+        android:layout_height="74dp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/btn_lock1"
+        app:layout_constraintEnd_toEndOf="@+id/btn_lock1"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_lock1"
+        app:layout_constraintTop_toTopOf="@+id/btn_lock1"
+        app:layout_constraintVertical_bias="0.166"
+        app:srcCompat="@drawable/icon_locked" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

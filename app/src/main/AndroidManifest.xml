@@ -30,9 +30,6 @@
             android:name=".ui.EssayActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.CobaActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.PilganActivity"
             android:exported="false" />
         <activity

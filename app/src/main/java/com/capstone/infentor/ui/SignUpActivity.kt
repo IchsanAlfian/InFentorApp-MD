@@ -16,7 +16,7 @@ class SignUpActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
 
-        binding.tvLogin.setOnClickListener {
+        binding.btnRegister.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
