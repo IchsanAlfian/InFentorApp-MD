@@ -70,6 +70,7 @@ class EssayActivity : AppCompatActivity() {
             intent.putExtra(ResultActivity.EXTRA_RESULT, dominantIntelligenceType)
             intent.putExtra(ResultActivity.EXTRA_CAREER_RECOMMENDATION, careerRecommendation)
             startActivity(intent)
+            finish()
         })
     }
 

@@ -136,6 +136,7 @@ class PilganActivity : AppCompatActivity() {
         val intent = Intent(this, EssayActivity::class.java)
         intent.putExtra(EXTRA_RESULT, dominantIntelligenceType)
         startActivity(intent)
+        finish()
     }
     private fun navigateToMainActivity() {
         val intent = Intent(this, MainActivity::class.java)

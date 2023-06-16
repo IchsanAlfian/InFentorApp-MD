@@ -65,7 +65,7 @@
         android:id="@+id/tv_soal"
         android:layout_width="278dp"
         android:layout_height="93dp"
-        android:text="Tuliskan kebiasaan kamu saat berada dirumah"
+        android:text="Bagaimana kamu mendeskripsikan pekerjaan impian kamu?"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20dp"
