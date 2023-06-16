@@ -14,21 +14,30 @@
         android:textStyle="bold"
         android:textSize="18sp" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="395dp"
+        android:layout_height="49dp"
         android:layout_below="@id/tvQuestion"
         android:layout_marginTop="8dp"
-        android:layout_above="@id/btnSubmit">
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="555dp"
+        android:layout_above="@id/btnSubmit"
+        android:layout_below="@id/tvQuestion"
+        android:layout_marginTop="72dp">
 
         <EditText
             android:id="@+id/etAnswer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Tulis jawaban kamu di sini..."
             android:background="@drawable/edittext_border"
-            android:inputType="textMultiLine"
             android:gravity="top"
+            android:hint="Tulis jawaban kamu di sini..."
+            android:inputType="textMultiLine"
             android:padding="16dp"
             android:textColor="#000000"
             android:textSize="16sp" />

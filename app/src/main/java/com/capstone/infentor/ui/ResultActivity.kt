@@ -22,12 +22,16 @@ class ResultActivity : AppCompatActivity() {
         }
 
         val dominantIntelligenceType = intent.getStringExtra(EXTRA_RESULT)
+        val careerRecommendation = intent.getStringExtra(EXTRA_CAREER_RECOMMENDATION)
+        binding.tvJob.text = careerRecommendation
         Log.d("ResultActivity", "dominantIntelligenceType: $dominantIntelligenceType") // Logging untuk memeriksa nilai ekstra
         val headerText = "Mantap Deddy Kamu Memiliki Kecerdasan Pada  Bidang $dominantIntelligenceType"
         binding.tvHeader.text = headerText
+
     }
 
     companion object {
         const val EXTRA_RESULT = "extra_result"
+        const val EXTRA_CAREER_RECOMMENDATION = "extra_career_recommendation"
     }
 }
