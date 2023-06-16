@@ -13,22 +13,26 @@ import retrofit2.Response
 class MlViewModel : ViewModel() {
     private val _careerRecommendation = MutableLiveData<String>()
     val careerRecommendation: LiveData<String> get() = _careerRecommendation
-
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading: LiveData<Boolean> = _isLoading
     private val service: CareerRecommendationService = ApiClient.retrofit.create(CareerRecommendationService::class.java)
 
     fun requestCareerRecommendation(inputText: String) {
+        _isLoading.value = true
         val request = CareerRecommendationRequest(inputText)
 
         val call = service.predictCareer(request)
         call.enqueue(object : Callback<String> {
             override fun onResponse(call: Call<String>, response: Response<String>) {
+                _isLoading.value = false
                 if (response.isSuccessful) {
                     val recommendation = response.body()
                     recommendation?.let {
-                        _careerRecommendation.value = recommendation
+                        _careerRecommendation.value = recommendation!!
                         // Do something with the received result
                     }
                 } else {
+                    _isLoading.value = false
                     Log.e("MLViewModel", "onFailure: ${response.message()}")
                 }
             }
